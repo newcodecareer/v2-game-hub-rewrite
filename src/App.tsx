@@ -1,21 +1,22 @@
 import { Button, Grid, GridItem, Show } from "@chakra-ui/react";
 import "./App.css";
-import NavBar from "./components/NavBar";
+import NavBar from "./components/Navbar";
+import GameGrid from "./components/GameGrid";
 
 function App() {
   return (
     <Grid
       templateAreas={{ base: `'nav' 'main'`, lg: `'nav nav' 'aside main'` }}>
-      <GridItem area={"nav"} bg={"red.300"}>
+      <GridItem area={"nav"} >
         <NavBar/>
       </GridItem>
       <Show above="lg">
-        <GridItem area={"aside"} bg={"green.100"}>
+        <GridItem area={"aside"} >
           aside
         </GridItem>
       </Show>
-      <GridItem area={"main"} bg={"gray.400"}>
-        main
+      <GridItem area={"main"} >
+        <GameGrid/>
       </GridItem>
     </Grid>
   );
