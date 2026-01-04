@@ -7,11 +7,6 @@ export interface Genre {
   image_background: string;
 }
 
-interface FetchGenresRes {
-  count: number;
-  results: Genre[];
-}
-
 const useGenres = () => useData<Genre>("/genres");
 
 export default useGenres;

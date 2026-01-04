@@ -9,7 +9,7 @@ const GameGrid = () => {
       {error && <Text>{error}</Text>}
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
-        spacing={2}
+        spacing={3}
         padding={2}>
         {data.map((game) => (
           <Skeleton isLoaded={!isLoading}>
