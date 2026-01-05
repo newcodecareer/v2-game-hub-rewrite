@@ -4,9 +4,9 @@ import GameCard from "./GameCard";
 import { Genre } from "../hooks/useGenres";
 
 interface Props {
-  selectGenre: Genre | null
+  selectGenre: Genre | null;
 }
-const GameGrid = ({selectGenre}:Props) => {
+const GameGrid = ({ selectGenre }: Props) => {
   const { data, error, isLoading } = useGames(selectGenre);
   return (
     <>
@@ -14,7 +14,7 @@ const GameGrid = ({selectGenre}:Props) => {
       <SimpleGrid
         columns={{ sm: 1, md: 2, lg: 3, xl: 4 }}
         spacing={3}
-        padding={2}>
+        paddingTop={2}>
         {data.map((game) => (
           <Skeleton key={game.id} isLoaded={!isLoading}>
             <GameCard key={game.id} game={game} />
