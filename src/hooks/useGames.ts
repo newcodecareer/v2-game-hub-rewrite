@@ -14,11 +14,11 @@ export interface Game {
   metacritic: number;
 }
 
-interface FetchGameRes {
-  count: number;
-  results: Game[];
-}
-
-const useGames = (selectGenre:Genre|null) => useData<Game>("/games",{params:{genres:selectGenre?.id}},[selectGenre?.id]);
+const useGames = (selectGenre: Genre | null, selectPlatform: Platform | null) =>
+  useData<Game>(
+    "/games",
+    { params: { genres: selectGenre?.id, platforms: selectPlatform?.id } },
+    [selectGenre?.id, selectPlatform?.id]
+  );
 
 export default useGames;
